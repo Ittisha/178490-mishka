@@ -159,11 +159,29 @@
           </li>
         </ul>
         <div class="page-footer__copyright copyright">
-          <b class="copyright__text">Разработано:</b>
+          <b class="copyright__text">Разработано</b>
           <a class="button copyright__link"
              href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
         </div>
       </div>
     </footer>
+    <div class="modal">
+      <div class="modal__main">
+        <h2 class="modal__title">Добавить в корзину</h2>
+        <p class="modal__text">Выберете размер:</p>
+        <form class="modal__order-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal__radios-wrapper">
+            <input class="modal__radio" type="radio" id="size-S" name="size"
+                   checked>
+            <label class="modal__label" for="size-S">S</label>
+            <input class="modal__radio" type="radio" id="size-M" name="size">
+            <label class="modal__label" for="size-M">M</label>
+            <input class="modal__radio" type="radio" id="size-L" name="size">
+            <label class="modal__label" for="size-L">L</label>
+          </div>
+          <button class="modal_button button" type="submit">Добавить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
