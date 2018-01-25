@@ -3,28 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Мишка - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="page-header">
       <nav class="page-header__nav">
         <button class="page-header__toggle" type="button">Открыть меню</button>
         <ul class="page-header__nav-list">
-          <li class="page-header__nav-item">
+          <li class="page-header__nav-item page-header__nav-item--logo">
             <a class="page-header__logo">
-              <img class="page-header__logo-image" src="http://placehold.it/86x35" width="86" height="35" alt="Логотип">
+              <img class="page-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Логотип">
             </a>
           </li>
           <li class="page-header__nav-item">
-            <a class="main-header__nav-link" href="catalog.html">Каталог товаров</a>
+            <a class="page-header__nav-link" href="catalog.html">Каталог товаров</a>
           </li>
           <li class="page-header__nav-item">
-            <a class="main-header__nav-link" href="form.html">Вязание на заказ</a>
+            <a class="page-header__nav-link" href="form.html">Вязание на заказ</a>
           </li>
           <li class="page-header__nav-item">
-            <a class="main-header__nav-link" href="#">Поиск по сайту</a>
+            <a class="page-header__nav-link" href="#">Поиск по сайту</a>
           </li>
           <li class="page-header__nav-item">
-            <a class="main-header__nav-link" href="#">Корзина: пока пуста</a>
+            <a class="page-header__nav-link" href="#">Корзина: пока пуста</a>
           </li>
         </ul>
       </nav>
@@ -62,10 +63,10 @@
           </tr>
         </table>
         <div class="promo-product__picture">
-          <img src="http://placehold.it/260x315" width="260" height="315" alt="Вязаные корзинки">
+          <img src="img/triple-set-mobile@1x.jpg" width="260" height="315" alt="Вязаные корзинки">
         </div>
         <div class="promo-product__price">Цена: 990 руб.</div>
-        <a class="promo-product__order button" href="#">Заказать</a>
+        <a class="button promo-product__order " href="#">Заказать</a>
       </section>
       <section class="advantages">
         <h2 class="advantages__title">Коротко о нас:</h2>
@@ -91,15 +92,15 @@
             <button class="reviews__toggle reviews__toggle--prev">Предыдущий отзыв</button>
             <button class="reviews__toggle reviews__toggle--next">Следующий отзыв</button>
           </div>
-          <a class="reviews__write button" href="#">Написать</a>
+          <a class="button reviews__write" href="#">Написать</a>
         </div>
       </section>
       <section class="contacts">
         <h2 class="contacts__title">Контакты</h2>
-        <table class="contacts_list">
+        <table class="contacts__list">
           <tr class="contacts__item">
             <td class="contacts__type">e-mail:</td>
-            <td class="contacts__details">
+            <td class="contacts__details contacts__details--email">
               <a class="contacts__email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
             </td>
           </tr>
@@ -127,8 +128,8 @@
             <a class="social__link social__link--twitter" href="#">Twitter</a>
           </li>
         </ul>
-        <div class="page-footer__copyright copyright">
-          <b class="copyright__text">Разработано</b>
+        <div class="copyright">
+          <div class="copyright__text">Разработано</div>
           <a class="button copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
         </div>
       </div>
@@ -146,7 +147,7 @@
             <input class="modal__radio" type="radio" id="size-L" name="size" value="L">
             <label class="modal__label" for="size-L">L</label>
           </div>
-          <button class="modal_button button" type="submit">Добавить</button>
+          <button class="button modal__button" type="submit">Добавить</button>
         </form>
       </div>
     </div>
