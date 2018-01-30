@@ -6,3 +6,27 @@
   margin-left: 30px;
   margin-right: 30px;
 }
+
+.page-footer__logo {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .page-footer__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 668px;
+    margin: 0 auto;
+  }
+
+  .page-footer__logo {
+    display: block;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer__wrapper {
+    width: 1050px;
+  }
+}

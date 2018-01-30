@@ -47,3 +47,54 @@
   font-size: @small-font-size;
   line-height: 24px;
 }
+
+@media (min-width: @tablet-width) {
+  .page-main {
+    margin-top: -68px;
+  }
+
+  .page-main__title {
+    margin-bottom: 372px;
+    padding-top: 160px;
+
+    font-size: @title-tablet-font-size;
+    line-height: 50px;
+  }
+
+  .page-main__title--catalog,
+  .page-main__title--form {
+    padding-top: 100px;
+    margin-bottom: 80px;
+  }
+
+  .page-main__text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 668px;
+
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-main__title {
+    margin-bottom: 360px;
+
+    font-size: @title-desktop-font-size;
+    line-height: 57px;
+  }
+
+  .page-main__title--catalog,
+  .page-main__title--form {
+    margin-bottom: 80px;
+  }
+
+  .page-main__text {
+    width: 1050px - 175px - 175px;
+    padding-left: 175px;
+    padding-right: 175px;
+    padding-top: 74px;
+    padding-bottom: 40px;
+  }
+}

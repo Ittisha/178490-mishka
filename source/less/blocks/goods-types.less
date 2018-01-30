@@ -33,3 +33,34 @@
 .goods-types__link--toys {
   background-color: @background-dark-mint;
 }
+
+@media (min-width: @tablet-width) {
+  .goods-types__list {
+    margin: 0 auto;
+    width: 668px;
+
+    display: flex;
+  }
+
+  .goods-types__item {
+    width: 50%;
+  }
+
+  .goods-types__link {
+    padding-left: 35px;
+
+    font-size: @bold-tablet-font-size;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .goods-types__list {
+    margin: 0 auto;
+    width: 1050px;
+  }
+
+  .goods-types__link {
+    padding-right: 350px;
+  }
+}
