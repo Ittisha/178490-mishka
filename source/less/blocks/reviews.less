@@ -65,6 +65,8 @@
 
   background-color: #ffffff;
   border: 1px solid @border-light-color;
+
+  cursor: pointer;
 }
 
 .reviews__toggle--next {
@@ -115,6 +117,16 @@
 
   margin-top: -10px;
   transform: rotate(135deg);
+}
+
+.reviews__toggle:hover::before,
+.reviews__toggle:hover::after {
+  opacity: 0.6;
+}
+
+.reviews__toggle:active::before,
+.reviews__toggle:active::after {
+  opacity: 0.3;
 }
 
 @media (min-width: @tablet-width) {
