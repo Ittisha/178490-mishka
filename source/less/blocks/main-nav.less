@@ -1,12 +1,44 @@
 .main-nav {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+
+  border-top: 1px solid @border-light-color;
 }
 
 .main-nav__toggle {
   position: absolute;
   right: 30px;
-  top: 27px;
+  top: 29px;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-nav--opened .main-nav__toggle {
+  width: 21px;
+  height: 20px;
+
+  background-image: url("../img/icon-menu-close.svg");
+  background-position: center;
+}
+
+.main-nav--closed .main-nav__toggle {
+  top: 32px;
+
+  width: 20px;
+  height: 14px;
+
+  background-image: url("../img/icon-menu-open.svg");
+  background-position: center;
 }
 
 .main-nav__list {
@@ -33,26 +65,10 @@
   padding: 0;
 }
 
-.main-nav__item--delivery,
-.main-nav__item--new-arrivals,
-.main-nav__item--sale {
-  display: none;
-}
-
 .main-nav__logo {
   display: block;
   margin: auto;
-}
 
-.main-nav__link {
-  font-size: @bold-font-size;
-  font-weight: 700;
-  line-height: 24px;
-  color: @text-black;
-}
-
-.main-nav__link,
-.main-nav__logo {
   &:hover {
     opacity: 0.6;
   }
@@ -62,7 +78,91 @@
   }
 }
 
+.main-nav__logo-image {
+  width: 86px;
+  height: 35px;
+}
+
+.main-nav__link {
+  font-size: @bold-font-size;
+  font-weight: 700;
+  line-height: 24px;
+  color: @text-black;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.main-nav__link--search,
+.main-nav__link--cart {
+  position: relative;
+}
+
+.main-nav__icon {
+  position: absolute;
+  top: 3px;
+}
+
+.main-nav__icon path {
+  fill: rgba(34, 31, 31, 0.2);
+}
+
+.main-nav__icon--search {
+  left: -43px;
+
+  width: 18px;
+  height: 18px;
+}
+
+.main-nav__icon--cart {
+  left: -45px;
+
+  width: 21px;
+  height: 18px;
+}
+
+.main-nav__item--delivery,
+.main-nav__item--new-arrivals,
+.main-nav__item--sale {
+  display: none;
+}
+
+.main-nav__link:hover path {
+  fill: @icon-hover-color;
+}
+
+.main-nav__link:active path {
+  fill: @icon-active-color;
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-nav--closed .main-nav__item--mobile {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__item--mobile {
+    display: block;
+  }
+
+  .main-nav--no-js .main-nav__item--mobile {
+    display: block;
+  }
+
+  .main-nav--no-js .main-nav__toggle {
+    display: none;
+  }
+}
+
 @media (min-width: @tablet-width) {
+  .main-nav {
+    border: none;
+  }
+
   .main-nav__list {
     display: flex;
     flex-wrap: wrap;
@@ -74,14 +174,15 @@
 
   .main-nav__item {
     padding: 0;
-    padding-top: 32px;
-    padding-bottom: 28px;
+    padding-top: 31px;
+    padding-bottom: 29px;
+
     border: none;
   }
 
   .main-nav__item--logo {
     padding: 0;
-    width: 280px;
+    min-width: 280px;
     margin-right: auto;
     justify-content: flex-start;
   }
@@ -91,7 +192,8 @@
   }
 
   .main-nav__item--cart {
-    padding-left: 84px;
+    padding-left: 83px;
+
     border-left: 1px solid @border-light-color;
   }
 
@@ -131,8 +233,13 @@
     margin: 0;
   }
 
+  .main-nav__logo-image {
+    width: 113px;
+    height: 46px;
+  }
+
   .main-nav__link--search {
-    padding-left: 82px;
+    padding-left: 81px;
 
     font-size: 0;
   }
@@ -141,9 +248,36 @@
   .main-nav__link--order {
     font-size: @regular-font-size;
   }
+
+  .main-nav__icon--search {
+    top: 50%;
+    left: 50%;
+
+    margin-top: -10px;
+    margin-left: -8px;
+  }
+
+  .main-nav__icon--cart {
+    left: -52px;
+  }
 }
 
 @media (min-width: @desktop-width) {
+  .main-nav__list {
+    position: relative;
+  }
+
+  .main-nav__list::after {
+    position: absolute;
+    content: "";
+    left: -50px;
+    top: 88px;
+
+    width: 1150px;
+    height: 1px;
+    background-color: #e7e7e7;
+  }
+
   .main-nav__item {
     order: 10;
   }
@@ -168,7 +302,11 @@
   .main-nav__item--logo {
     order: 5;
 
-    width: auto;
+    min-width: 180px;
+  }
+
+  .main-nav__item--cart {
+    padding-left: 85px;
   }
 
   .main-nav__item--new-arrivals,
@@ -184,6 +322,19 @@
 
   .main-nav__item--sale {
     padding-left: 34px;
+  }
+
+  .main-nav__logo-image {
+    width: 149px;
+    height: 72px;
+  }
+
+  .main-nav__link--search {
+    padding-left: 83px;
+  }
+
+  .main-nav__icon--cart {
+    left: -54px;
   }
 
   .main-nav__link--catalog {

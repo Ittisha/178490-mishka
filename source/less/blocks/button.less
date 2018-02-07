@@ -11,9 +11,12 @@
   color: @text-default-color;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0.5px;
 
   background-color: white;
   border: 2px solid @border-dark-color;
+
+  cursor: pointer;
 
   &:hover {
     color: white;
@@ -25,5 +28,11 @@
     color: fadeout(white, 70%);
 
     background-color: @background-button-hover;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button {
+    letter-spacing: 0;
   }
 }

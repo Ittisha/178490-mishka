@@ -5,7 +5,7 @@
 .contacts__wrapper {
   margin-right: 30px;
   margin-left: 30px;
-  margin-top: 34px;
+  margin-top: 36px;
 }
 
 .contacts__title {
@@ -30,7 +30,7 @@
 
 .contacts__type {
   padding: 0;
-  padding-bottom: 28px;
+  padding-bottom: 29px;
   width: 77px;
 
   vertical-align: top;
@@ -38,16 +38,18 @@
 
 .contacts__details {
   padding: 0;
-  padding-bottom: 28px;
+  padding-bottom: 29px;
   width: 183px;
+
+  letter-spacing: -0.1px;
 }
 
 .contacts__email {
+  position: relative;
   padding: 0;
   display: block;
 
   color: @text-default-color;
-  border-bottom: 1px solid #62d1ba;
 
   &:hover {
     color: @text-light-tiffany;
@@ -58,6 +60,22 @@
 
     opacity: 0.3;
   }
+}
+
+.contacts__email::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+
+  width: 98%;
+  height: 1px;
+
+  background-color: #62d1ba;
+}
+
+.contacts__email:active::after {
+  display: none;
 }
 
 .contacts__map {
@@ -81,14 +99,16 @@
 
   .contacts__wrapper {
     margin: 0 auto;
-    margin-top: 78px;
+    margin-top: 61px;
     width: 668px;
   }
 
   .contacts__title {
     margin-bottom: 48px;
+    margin-left: -2px;
 
     font-size: @title-tablet-font-size;
+    letter-spacing: -0.2px;
     line-height: 50px;
   }
 
@@ -104,6 +124,7 @@
   }
 
   .contacts__item {
+    display: block;
     width: 50%;
   }
 
@@ -113,7 +134,7 @@
 
   .contacts__map {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 51px;
   }
 
   .contacts__map-iframe {
@@ -134,20 +155,23 @@
     justify-content: flex-start;
     margin: 0 auto;
     margin-top: 70px;
-    margin-bottom: 105px;
+    margin-bottom: 104px;
     padding-left: 175px;
     width: 1050px - 175px;
   }
 
   .contacts__wrapper {
     margin: 0;
-    padding-top: 72px;
+    padding-top: 69px;
     width: 350px;
   }
 
   .contacts__title {
+    margin-left: -4px;
+
     font-size: @title-desktop-font-size;
     line-height: 57px;
+    letter-spacing: -0.6px;
   }
 
   .contacts__list {
@@ -175,7 +199,7 @@
 
   .contacts__write {
     margin: 0;
-    margin-top: -50px;
+    margin-top: -53px;
     margin-bottom: auto;
   }
 }
