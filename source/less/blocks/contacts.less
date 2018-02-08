@@ -85,6 +85,11 @@
   background-image: url("../img/map-mobile@1x.jpg");
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+    background-image: url("../img/map-mobile@2x.jpg");
+    background-size: 322px auto;
+  }
 }
 
 .contacts__write {
@@ -135,6 +140,13 @@
   .contacts__map {
     width: 100%;
     margin-bottom: 51px;
+
+    background-image: url("../img/map-tablet@1x.jpg");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/map-tablet@2x.jpg");
+      background-size: 768px auto;
+    }
   }
 
   .contacts__map-iframe {
@@ -190,6 +202,13 @@
     margin-bottom: 0;
     width: 525px;
     height: 457px;
+
+    background-image: url("../img/map-desktopt@1x.jpg");
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/map-desktop@2x.jpg");
+      background-size: 525px auto;
+    }
   }
 
   .contacts__map-iframe {
