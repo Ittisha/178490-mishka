@@ -3,12 +3,13 @@ var navButton = document.querySelector('.main-nav__toggle');
 var navButtonText = navButton.querySelector('span');
 var modal = document.querySelector('.modal');
 var pageMain = document.querySelector('.page-main');
+var mapContainer = document.querySelector('.contacts__map');
 
-if(mainNav) {
+if (mainNav) {
   mainNav.classList.remove('main-nav--no-js');
 }
 
-if(navButton && mainNav && navButtonText) {
+if (navButton && mainNav && navButtonText) {
 
   var onNavButtonClick = function (event) {
     event.preventDefault();
@@ -30,7 +31,7 @@ if(navButton && mainNav && navButtonText) {
   navButton.addEventListener('click', onNavButtonClick);
 }
 
-if(pageMain && modal) {
+if (pageMain && modal) {
   var onModalButtonClick = function (event) {
     event.preventDefault();
 
@@ -47,4 +48,22 @@ if(pageMain && modal) {
 
   pageMain.addEventListener('click', onModalButtonClick);
   modal.addEventListener('click', onModalOverlayClick);
+}
+
+if (mapContainer) {
+  function initMap() {
+    var center = {lat: 59.938660, lng: 30.323000};
+    var pin = "../img/icon-map-pin.svg";
+
+    var map = new google.maps.Map(mapContainer, {
+      zoom: 16,
+      center: center
+    });
+
+    var marker = new google.maps.Marker({
+      position: center,
+      map: map,
+      icon: pin
+    });
+  }
 }
