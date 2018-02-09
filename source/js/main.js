@@ -53,7 +53,7 @@ if (pageMain && modal) {
 if (mapContainer) {
   function initMap() {
     var center = {lat: 59.938660, lng: 30.323000};
-    var pin = "../img/icon-map-pin.svg";
+    var pin = "img/icon-map-pin.svg";
 
     var map = new google.maps.Map(mapContainer, {
       zoom: 16,
