@@ -4,7 +4,7 @@ var mainNav = document.querySelector('.main-nav');
 var navButton = document.querySelector('.main-nav__toggle');
 var navButtonText = navButton.querySelector('span');
 var modal = document.querySelector('.modal');
-var modalCloseButton = modal.querySelector('.modal__close');
+var modalCloseButton = document.querySelector('.modal__close');
 var pageMain = document.querySelector('.page-main');
 var mapContainer = document.querySelector('.contacts__map');
 
