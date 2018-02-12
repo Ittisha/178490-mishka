@@ -4,6 +4,10 @@
   margin-bottom: 55px;
 }
 
+.order-form__wrapper {
+  position: relative;
+}
+
 .order-form__group {
   margin: 0;
   padding: 0;
@@ -109,8 +113,8 @@
   border-radius: 50%;
 }
 
-.order-form__radio-title:hover::before,
-.order-form__radio-title:focus::before {
+.order-form__radio:focus + .order-form__radio-title::before,
+.order-form__radio-title:hover::before {
   border-color: @border-hover-color;
 }
 
@@ -148,8 +152,8 @@
   border: 2px solid @border-dark-color;
 }
 
-.order-form__checkbox-title:hover::before,
-.order-form__checkbox-title:focus::before {
+.order-form__checkbox:focus + .order-form__checkbox-title::before,
+.order-form__checkbox-title:hover::before {
   border-color: @border-hover-color;
 }
 
@@ -178,6 +182,8 @@
 }
 
 .order-form__input {
+  box-sizing: border-box;
+  width: 100%;
   margin: 0;
   margin-bottom: 17px;
   padding: 0;
@@ -185,6 +191,9 @@
   padding-bottom: 14px;
 
   font-size: @bold-font-size;
+  font-weight: 400;
+  font-family: @font-family;
+  color: @text-default-color;
   line-height: 18px;
 
   border: none;
@@ -192,7 +201,6 @@
 
   &::placeholder {
     opacity: 0.3;
-    letter-spacing: 0.3px;
   }
 }
 
@@ -207,20 +215,36 @@
   margin-top: 13px;
   margin-bottom: 22px;
   padding-right: 44px;
-
-  &::placeholder {
-    letter-spacing: -1px;
-  }
 }
 
 .order-form__input--email {
   margin-top: 13px;
   margin-bottom: 22px;
   padding-right: 44px;
+}
 
-  &::placeholder {
-    letter-spacing: 0;
-  }
+.order-form__icon {
+  position: absolute;
+
+  fill: black;
+  opacity: 0.2;
+}
+
+.order-form__icon--email {
+  right: 4px;
+  bottom: 30px;
+}
+
+.order-form__icon--phone {
+  right: 6px;
+  bottom: 39px;
+}
+
+.order-form__input:hover + .order-form__icon,
+.order-form__input:focus + .order-form__icon,
+.order-form__input:active + .order-form__icon {
+  fill: @stroke-color;
+  opacity: 1;
 }
 
 .order-form__textarea {
@@ -235,13 +259,15 @@
   resize: none;
 
   font-size: @bold-font-size;
+  font-weight: 400;
+  font-family: @font-family;
+  color: @text-default-color;
   line-height: 18px;
 
   border: 2px solid @border-dark-color;
 
   &::placeholder {
     opacity: 0.3;
-    letter-spacing: -0.8px;
   }
 }
 
@@ -270,6 +296,7 @@
   .order-form {
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 50px;
   }
 
   .order-form__group {
@@ -339,12 +366,12 @@
   }
 
   .order-form__radio-title::before {
-    width: 49px;
-    height: 49px;
+    width: 48px;
+    height: 48px;
   }
 
   .order-form__radio:checked + .order-form__radio-title::after {
-    top: 16px;
+    top: 15px;
     left: 15px;
 
     width: 22px;
@@ -359,13 +386,13 @@
   }
 
   .order-form__checkbox-title::before {
-    width: 50px;
+    width: 49px;
     height: 48px;
   }
 
   .order-form__checkbox:checked + .order-form__checkbox-title::after {
-    top: 14px;
-    left: 12px;
+    top: 12px;
+    left: 11px;
 
     width: 28px;
     height: 15px;
@@ -377,9 +404,7 @@
 
   .order-form__input {
     padding-left: 18px;
-    padding-top: 14px;
-    padding-bottom: 15px;
-    margin-bottom: 23px;
+    margin-bottom: 22px;
 
     font-size: 19px;
   }
@@ -389,17 +414,18 @@
   }
 
   .order-form__input--name {
-    width: 408px;
+    width: 427px;
   }
 
   .order-form__input--surname {
-    width: 356px;
+    width: 375px;
   }
 
   .order-form__input--phone {
     margin-top: 0;
     padding-right: 54px;
-    width: 501px - 18px - 54px;
+    width: 501px;
+    padding-bottom: 12px;
 
     background-color: transparent;
   }
@@ -407,9 +433,19 @@
   .order-form__input--email {
     margin-top: 0;
     padding-right: 54px;
-    width: 501px - 18px - 54px;
+    width: 501px;
 
     background-color: transparent;
+  }
+
+  .order-form__icon--email {
+    right: 21px;
+    bottom: 32px;
+  }
+
+  .order-form__icon--phone {
+    right: 27px;
+    bottom: 40px;
   }
 
   .order-form__textarea {
@@ -419,11 +455,6 @@
     padding-left: 16px;
 
     font-size: 19px;
-
-    &::placeholder {
-      letter-spacing: 0.3px;
-      word-spacing: -8px;
-    }
   }
 
   .order-form__footer {
@@ -442,13 +473,13 @@
 
   .order-form__submit {
     width: 230px;
-    margin-top: 3px;
+    margin-top: 4px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .order-form {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
   }
 
   .order-form__wrapper {
@@ -477,23 +508,33 @@
   }
 
   .order-form__input {
-    padding-bottom: 13px;
+    padding-bottom: 11px;
     margin-right: 40px;
     margin-bottom: 25px;
   }
 
   .order-form__input--surname {
-    width: 554px;
+    width: 575px;
   }
 
   .order-form__input--name {
-    width: 609px;
+    width: 626px;
   }
 
   .order-form__input--phone,
   .order-form__input--email {
-    width: 642px;
+    width: 700px;
     padding-right: 40px;
+  }
+
+  .order-form__icon--email {
+    right: 178px;
+    bottom: 32px;
+  }
+
+  .order-form__icon--phone {
+    right: 182px;
+    bottom: 40px;
   }
 
   .order-form__textarea {
