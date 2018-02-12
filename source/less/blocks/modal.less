@@ -18,8 +18,33 @@
 }
 
 .modal__main {
+  position: relative;
+
   border-top: 1px solid #c7c7c7;
   box-shadow: 0 5px 10px 0 rgba(0, 1, 1, 0.25);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 21px;
+  height: 20px;
+
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-menu-close.svg");
+  background-position: center;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .modal__title {

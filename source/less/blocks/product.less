@@ -29,6 +29,14 @@
   margin-right: auto;
 }
 
+.product__link:hover .product__title {
+  opacity: 0.6;
+}
+
+.product__link:active .product__title {
+  opacity: 0.3;
+}
+
 .product__title {
   margin: 0;
   padding: 0;
@@ -70,6 +78,21 @@
 
 .product__order {
   font-size: 10px;
+}
+
+.product__icon-cart {
+  fill: #221f1f;
+  opacity: 0.2;
+
+  &:hover {
+    fill: @icon-hover-color;
+    opacity: 1;
+  }
+
+  &:active {
+    fill: @icon-hover-color;
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -154,5 +177,9 @@
     margin-right: 0;
     margin-left: 0;
     min-height: 73px;
+  }
+
+  .product__icon-cart {
+    margin-right: 5px;
   }
 }

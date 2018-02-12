@@ -1,17 +1,37 @@
 .social {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  padding-left: 56px;
+  padding-right: 62px;
   min-height: 80px;
 
   border-bottom: 1px solid @border-footer-color;
   list-style: none;
 }
 
+.social__icon {
+  fill: #221f1f;
+
+  &:hover {
+    fill: #46c1ae;
+  }
+
+  &:active {
+    fill: #46c1ae;
+    opacity: 0.3;
+  }
+}
+
 @media (min-width: @tablet-width) {
   .social {
-    min-height: 142px;
+    width: 140px;
+    padding-right: 0;
+    padding-left: 74px;
+    min-height: 143px;
+
+    border: none;
   }
 }
