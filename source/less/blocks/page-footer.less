@@ -22,20 +22,22 @@
 
   .page-footer__logo {
     display: block;
-
-    &:hover {
-      fill: #46c1ae;
-    }
-
-    &:active {
-      fill: #46c1ae;
-      opacity: 0.3;
-    }
   }
 
   .page-footer__logo-image {
     width: 102px;
     height: 34px;
+
+    fill: #231f20;
+  }
+
+  .page-footer__logo-link:hover .page-footer__logo-image {
+    fill: #46c1ae;
+  }
+
+  .page-footer__logo-link:active .page-footer__logo-image {
+    fill: #46c1ae;
+    opacity: 0.3;
   }
 }
 
