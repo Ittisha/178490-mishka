@@ -79,6 +79,8 @@
 }
 
 .contacts__map {
+  position: relative;
+
   min-height: 457px;
   margin-bottom: 40px;
 
@@ -90,6 +92,22 @@
     background-image: url("../img/map-mobile@2x.jpg");
     background-size: 322px auto;
   }
+}
+
+.contacts__map::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+
+  width: 66px;
+  height: 101px;
+  margin-left: -22px;
+  margin-top: -85px;
+
+  background-image: url("../img/icon-map-pin.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .contacts__write {
