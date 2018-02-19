@@ -5,13 +5,14 @@
   padding-top: 14px;
   padding-bottom: 14px;
 
+  font-style: normal;
+  font-family: @font-family;
   font-size: @bold-font-size;
   font-weight: 700;
   line-height: 20px;
   color: @text-default-color;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.5px;
 
   background-color: white;
   border: 2px solid @border-dark-color;
@@ -28,11 +29,5 @@
     color: fadeout(white, 70%);
 
     background-color: @background-button-hover;
-  }
-}
-
-@media (min-width: @tablet-width) {
-  .button {
-    letter-spacing: 0;
   }
 }

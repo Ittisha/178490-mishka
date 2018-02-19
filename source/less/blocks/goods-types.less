@@ -11,13 +11,14 @@
   display: block;
   padding-top: 26px;
   padding-bottom: 29px;
-  padding-left: 30px;
-  padding-right: 160px;
+  padding-left: 9.375%;
+  padding-right: 50%;
 
   font-size: 19px;
   font-weight: 700;
   line-height: 24px;
   color: #ffffff;
+  word-wrap: break-word;
 
   &:active {
     color: rgba(255, 255, 255, 0.3);
@@ -40,19 +41,21 @@
 }
 
 .goods-types__icon--interior {
-  top: 23px;
+  top: 50%;
   right: 36px;
 
   width: 40px;
   height: 62px;
+  margin-top: -31px;
 }
 
 .goods-types__icon--toys {
-  top: 21px;
+  top: 50%;
   right: 26px;
 
   width: 60px;
   height: 60px;
+  margin-top: -30px;
 }
 
 .goods-types__link:hover .goods-types__icon {
@@ -86,36 +89,61 @@
   .goods-types__list {
     margin: 0 auto;
     width: 668px;
-    min-height: 120px;
 
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
   }
 
   .goods-types__item {
+    display: flex;
     width: 50%;
   }
 
   .goods-types__link {
+    flex-grow: 1;
     padding-left: 35px;
 
     font-size: @bold-tablet-font-size;
     line-height: 30px;
 
     &:hover {
+      padding-top: 21px;
       padding-bottom: 34px;
     }
   }
 
+  .goods-types__link:hover::before {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    content: "";
+
+    width: 100%;
+    height: 5px;
+  }
+
+  .goods-types__link--interior:hover::before {
+    background-color: @background-light-mint;
+  }
+
+  .goods-types__link--toys:hover::before {
+    background-color: @background-dark-mint;
+  }
+
   .goods-types__icon--interior {
-    top: 28px;
     right: 37px;
   }
 
   .goods-types__icon--toys {
-    top: 30px;
     right: 35px;
+  }
+
+  .goods-types__link:hover .goods-types__icon--interior {
+    margin-top: -31px - 5px;
+  }
+
+  .goods-types__link:hover .goods-types__icon--toys {
+    margin-top: -30px - 5px;
   }
 }
 
