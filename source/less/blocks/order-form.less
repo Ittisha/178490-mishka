@@ -122,6 +122,23 @@
   border-color: @border-active-color;
 }
 
+.order-form__radio-title:active::after {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  content: "";
+
+  width: 15px;
+  height: 15px;
+
+  background-color: @background-light-mint;
+  border-radius: 50%;
+}
+
+.order-form__radio:checked + .order-form__radio-title:active::after {
+  display: none;
+}
+
 .order-form__radio:checked + .order-form__radio-title::after {
   position: absolute;
   top: 12px;
@@ -159,6 +176,25 @@
 
 .order-form__checkbox-title:active::before {
   border-color: @border-active-color;
+}
+
+.order-form__checkbox-title:active::after {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  content: "";
+
+  width: 20px;
+  height: 8px;
+
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+
+  transform: rotate(-45deg);
+}
+
+.order-form__checkbox:checked + .order-form__checkbox-title:active::after {
+  display: none;
 }
 
 .order-form__checkbox:checked + .order-form__checkbox-title::after {
@@ -370,6 +406,14 @@
     height: 48px;
   }
 
+  .order-form__radio-title:active::after {
+    top: 15px;
+    left: 15px;
+
+    width: 22px;
+    height: 22px;
+  }
+
   .order-form__radio:checked + .order-form__radio-title::after {
     top: 15px;
     left: 15px;
@@ -388,6 +432,14 @@
   .order-form__checkbox-title::before {
     width: 49px;
     height: 48px;
+  }
+
+  .order-form__checkbox-title:active::after {
+    top: 12px;
+    left: 11px;
+
+    width: 28px;
+    height: 15px;
   }
 
   .order-form__checkbox:checked + .order-form__checkbox-title::after {
